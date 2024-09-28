@@ -31,7 +31,7 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <div className="container-fluid bg-gradient p-5 text-white text-center d-flex align-items-center justify-content-center" style={{height: "50vh", backgroundImage: 'url(https://via.placeholder.com/1920x1080)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+      <div className="container-fluid bg-gradient p-5 text-white text-center d-flex align-items-center justify-content-center" style={{ height: "50vh",backgroundColor: "#800000" , backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div>
           <h1 className="display-4 fw-bold">Colgate Food Finder</h1>
           <p className="lead">Access to multicultural food and recipes for Colgate students</p>
@@ -54,8 +54,7 @@ function App() {
               </div>
             </div>
           </div>
-
-          {/* Service 2 */}
+          {/* 
           <div className="col-md-4">
             <div className="card shadow-sm border-0">
               <img src="https://via.placeholder.com/150" className="card-img-top" alt="Service 2" />
@@ -67,7 +66,6 @@ function App() {
             </div>
           </div>
 
-          {/* Service 3 */}
           <div className="col-md-4">
             <div className="card shadow-sm border-0">
               <img src="https://via.placeholder.com/150" className="card-img-top" alt="Service 3" />
@@ -81,8 +79,6 @@ function App() {
         </div>
       </div>
 
-      {/* Modals */}
-      {/* Service 1 Modal */}
       <div className="modal fade" id="service1Modal" tabIndex="-1" aria-labelledby="service1ModalLabel" aria-hidden="true">
         <div className="modal-dialog">
           <div className="modal-content">
@@ -101,7 +97,6 @@ function App() {
         </div>
       </div>
 
-      {/* Service 2 Modal */}
       <div className="modal fade" id="service2Modal" tabIndex="-1" aria-labelledby="service2ModalLabel" aria-hidden="true">
         <div className="modal-dialog">
           <div className="modal-content">
@@ -120,7 +115,6 @@ function App() {
         </div>
       </div>
 
-      {/* Service 3 Modal */}
       <div className="modal fade" id="service3Modal" tabIndex="-1" aria-labelledby="service3ModalLabel" aria-hidden="true">
         <div className="modal-dialog">
           <div className="modal-content">
@@ -138,7 +132,9 @@ function App() {
           </div>
         </div>
       </div>
-
+ */}
+        </div>
+      </div>
       {/* Footer */}
       <footer className="bg-dark text-white text-center py-3 mt-5">
         <p>&copy; 2024 Colgate University | All Rights Reserved</p>
