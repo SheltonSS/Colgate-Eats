@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Slider, Button, Typography, Box } from '@mui/material';
 import axios from 'axios';
-// import handleGenerate from ''
+import { generateRecipe } from './Helperfunctions/generateRecipe';
 
 const TestingPage = () => {
-  // State for each slider value
+  // // State for each slider value
   const [light, setLight] = useState(3);
   const [sweet, setSweet] = useState(3);
   const [mild, setMild] = useState(3);
@@ -32,7 +32,7 @@ const TestingPage = () => {
       <Slider value={time} onChange={(e, val) => setTime(val)} min={1} max={5} step={1} />
       <Typography>Time of Day: {time}</Typography>
 
-      <Button variant="contained" color="primary" onClick={handleGenerate} sx={{ marginTop: 2 }}>
+      <Button variant="contained" color="primary" onClick={generateRecipe} sx={{ marginTop: 2 }}>
         Generate Food Suggestions
       </Button>
 

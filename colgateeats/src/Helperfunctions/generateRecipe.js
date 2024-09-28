@@ -3,7 +3,8 @@ const OpenAI = require('openai');
 
 // Create a new instance of OpenAI
 const openai = new OpenAI({
-  apiKey: "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", // Use your API key from environment variable
+  apiKey: "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",
+  dangerouslyAllowBrowser: true
 });
 
 async function generateRecipe(sweet_rank, spice_rank, veggie_rank, meal_time, time_range, cuisine, skill_level) {
