@@ -1,38 +1,80 @@
-.App {
-  text-align: center;
+/* General Styles */
+body {
+  font-family: 'Roboto', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Navbar */
+.navbar {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Hero Section */
+.bg-gradient {
+  background: rgba(0, 0, 0, 0.5); /* Transparent overlay */
+  background-blend-mode: darken;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.display-4 {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+.btn-lg {
+  padding: 0.75rem 1.5rem;
+}
+
+/* Services Section */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 1rem;
+}
+
+/* Modals */
+.modal-header {
+  background-color: #dc3545;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.modal-footer button {
+  border-radius: 50px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Footer */
+footer {
+  background-color: #222;
+  color: #fff;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .display-4 {
+    font-size: 2.5rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .btn-lg {
+    font-size: 1rem;
   }
 }
