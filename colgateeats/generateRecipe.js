@@ -6,12 +6,13 @@ const openai = new OpenAI({
   apiKey: "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", // Use your API key from environment variable
 });
 
-async function generateRecipe(sweet_rank, spice_rank, veggie_rank, time_range, cuisine, skill_level) {
+async function generateRecipe(sweet_rank, spice_rank, veggie_rank, meal_time, time_range, cuisine, skill_level) {
   const prompt = `Generate three unique recipes based on the following user preferences. Each recipe should include a name, ingredients, cooking instructions, cuisine type, and estimated cook time. The user has ranked their preferences on a scale of 1 to 10 as follows:
 
   Sweet: ${sweet_rank}
   Mild: ${spice_rank}
   Veggie: ${veggie_rank}
+  Meal time from breakfast, lunch, dinner: ${meal_time}
   Time (array of minutes): ${time_range}
   Cuisine from asian, african, european, latin: ${cuisine}
   Skill Level from beginner, intermediate, or pro: ${skill_level}
