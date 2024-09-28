@@ -31,7 +31,7 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <div className="container-fluid bg-gradient p-5 text-white text-center d-flex align-items-center justify-content-center" style={{ height: "50vh", backgroundColor: "#800000", backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <div className="container-fluid bg-danger p-5 text-white text-center d-flex align-items-center justify-content-center" style={{ height: "50vh", backgroundColor: "#800000", backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div>
           <h1 className="display-4 fw-bold">Colgate Food Finder</h1>
           <p className="lead">Access to multicultural food and recipes for Colgate students</p>
