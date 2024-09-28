@@ -108,9 +108,9 @@ def insert_sample_data():
 
     #Route Days
     routedays = [
-        ('Friday', 'ROUTE ID')
-        ('Saturday',)
-        ('Sunday',)
+        ('Friday', '1')
+        ('Saturday','1')
+        ('Sunday','2')
     ]
     cursor.executemany('INSERT INTO RouteDays (day, route_ID) VALUES (?, ?)', routedays)
 
