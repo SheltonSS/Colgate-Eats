@@ -1,67 +1,114 @@
-import React from 'react';
-import './App.css';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import React, { useState } from "react";
+import "./App.css";
 
 function App() {
+  const [currentPage, setCurrentPage] = useState("home");
+  const [showRecipePopup, setShowRecipePopup] = useState(false);
+
+  const openRecipePopup = () => {
+    setShowRecipePopup(true);
+  };
+
+  const closeRecipePopup = () => {
+    setShowRecipePopup(false);
+  };
+
+  const renderPage = () => {
+    switch (currentPage) {
+      // case "home":
+      //   return <Home openRecipePopup={openRecipePopup} />;
+      // case "preferences":
+      //   return <Preferences />;
+      // case "recipes":
+      //   return <Recipes />;
+      // case "contact":
+      //   return <Contact />;
+      default:
+        return <Home openRecipePopup={openRecipePopup} />;
+    }
+  };
+
   return (
-    <div className="container mt-5">
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="container-fluid">
-          <a className="navbar-brand" href="#">Colgate University</a>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav ms-auto">
-              <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/">Home</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="#">About</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="#">Services</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/testing">Testing</Link>
-              </li>
-            </ul>
-          </div>
+    <div className="app">
+      <nav className="navbar">
+        <h3>Colgate University</h3>
+        <div>
+          <button onClick={() => setCurrentPage("home")}>Home</button>
+          <button onClick={() => setCurrentPage("recipes")}>Recipes</button>
+          <button onClick={() => setCurrentPage("contact")}>Contact</button>
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <div className="container-fluid bg-danger p-5 text-white text-center d-flex align-items-center justify-content-center" style={{ height: "50vh", backgroundColor: "#800000", backgroundSize: 'cover', backgroundPosition: 'center' }}>
-        <div>
-          <h1 className="display-4 fw-bold">COLGATE EATS</h1>
-          <p className="lead">Access to multicultural food and recipes for Colgate students</p>
-          <a href="#" className="btn btn-light btn-lg mt-3 shadow">Learn More</a>
-        </div>
-      </div>
+      <header className="header">
+        <h1>COLGATE EATS</h1>
+        <p>Your Taste, Our Tech: Discover Recipes Tailored Just for You!</p>
+        <button className="preferences-btn" onClick={() => setCurrentPage("preferences")}>
+          Preferences
+        </button>
+      </header>
 
-      {/* Services Section */}
-      <div className="container mt-5">
-        <h2 className="text-center mb-4">Our Services</h2>
-        <div className="row">
-          {/* Service 1 */}
-          <div className="col-md-4">
-            <div className="card shadow-sm border-0">
-              <img src="https://via.placeholder.com/150" className="card-img-top" alt="Service 1" />
-              <div className="card-body">
-                <h5 className="card-title">Multicultural Recipe Database</h5>
-                <p className="card-text">Access an extensive collection of recipes from around the world.</p>
-                <a href="#" className="btn btn-danger" data-bs-toggle="modal" data-bs-target="#service1Modal">Read More</a>
-              </div>
-            </div>
+      {renderPage()}
+
+      {showRecipePopup && (
+        <div className="recipe-popup">
+          <div className="popup-content">
+            <h2>Recipe Details</h2>
+            <p>This is a placeholder for the recipe details.</p>
+            <button className="close-popup-btn" onClick={closeRecipePopup}>
+              Close
+            </button>
+            <button className="next-btn">Find Directions</button>
           </div>
         </div>
-      </div>
-      {/* Footer */}
-      <footer className="bg-dark text-white text-center py-3 mt-5">
-        <p>&copy; 2024 Colgate University | All Rights Reserved</p>
-      </footer>
+      )}
     </div>
   );
 }
 
-export default App;
+function Home({ openRecipePopup }) {
+  return (
+    <>
+      <section className="favorites-section">
+        <h2>Colgate's Top 13 Picks</h2>
+        <button className="view-all-btn">View all</button>
+        <div className="favorites">
+          <div className="favorite-card" onClick={openRecipePopup}>
+            <div className="card-title">Recipe Title</div>
+            <div className="card-badges">Badge Area</div>
+          </div>
+          <div className="favorite-card" onClick={openRecipePopup}>
+            <div className="card-title">Recipe Title</div>
+            <div className="card-badges">Badge Area</div>
+          </div>
+          <div className="favorite-card" onClick={openRecipePopup}>
+            <div className="card-title">Recipe Title</div>
+            <div className="card-badges">Badge Area</div>
+          </div>
+        </div>
+      </section>
+
+      <section className="halal-section">
+        <h2>Halal Cuisine</h2>
+        <button className="view-all-btn">View all</button>
+        <div className="halal-options">
+          <div className="halal-card" onClick={openRecipePopup}>
+            <div className="card-title">Recipe Title</div>
+            <div className="card-badges">Badge Area</div>
+          </div>
+          <div className="halal-card" onClick={openRecipePopup}>
+            <div className="card-title">Recipe Title</div>
+            <div className="card-badges">Badge Area</div>
+          </div>
+          <div className="halal-card" onClick={openRecipePopup}>
+            <div className="card-title">Recipe Title</div>
+            <div className="card-badges">Badge Area</div>
+          </div>
+        </div>
+        <div className>
+        </div>
+      </section>
+    </>
+  )
+}
+
+export default App
