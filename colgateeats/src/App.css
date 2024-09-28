@@ -1,0 +1,146 @@
+/* General Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+}
+
+.container-fluid.bg-danger {
+  background-image: linear-gradient(135deg, #ff6f61 0%, #d43f3a 100%);
+  padding: 6rem 1.5rem;
+  color: #fff;
+}
+
+/* Navbar */
+.navbar {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: #d43f3a;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #d43f3a;
+}
+
+/* Hero Section */
+.container-fluid.bg-danger h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.container-fluid.bg-danger p.lead {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.container-fluid.bg-danger .btn-lg {
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  background-color: #fff;
+  color: #d43f3a;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.container-fluid.bg-danger .btn-lg:hover {
+  background-color: #f8f9fa;
+}
+
+/* Services Section */
+.card {
+  transition: all 0.3s ease;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+.btn-danger {
+  background-color: #d43f3a;
+  border-radius: 50px;
+  padding: 0.5rem 1.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-danger:hover {
+  background-color: #c23630;
+}
+
+/* Modals */
+.modal-header {
+  background-color: #d43f3a;
+  color: white;
+}
+
+.modal-footer .btn {
+  border-radius: 50px;
+  padding: 0.5rem 1.5rem;
+}
+
+/* Footer */
+footer {
+  background-color: #222;
+  color: #fff;
+  padding: 1.5rem;
+}
+
+footer p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+footer a {
+  color: #d43f3a;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .container-fluid.bg-danger h1 {
+    font-size: 2.5rem;
+  }
+
+  .container-fluid.bg-danger p.lead {
+    font-size: 1rem;
+  }
+
+  .container-fluid.bg-danger .btn-lg {
+    font-size: 1rem;
+  }
+}
