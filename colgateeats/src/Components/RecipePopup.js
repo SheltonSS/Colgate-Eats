@@ -1,12 +1,26 @@
-// Components/RecipePopup.js
 import React from "react";
 
-function RecipePopup({ closeRecipePopup }) {
+function RecipePopup({ title, description, ingredients, instructions, closeRecipePopup }) {
   return (
     <div className="recipe-popup">
       <div className="popup-content">
-        <h2>Recipe Details</h2>
-        <p>This is a placeholder for the recipe details.</p>
+        <h2>{title}</h2>
+        <p>{description}</p>
+
+        <h3>Ingredients</h3>
+        <ul>
+          {ingredients.map((ingredient, index) => (
+            <li key={index}>{ingredient}</li>
+          ))}
+        </ul>
+
+        <h3>Instructions</h3>
+        <ol>
+          {instructions.map((instruction, index) => (
+            <li key={index}>{instruction}</li>
+          ))}
+        </ol>
+
         <button className="close-popup-btn" onClick={closeRecipePopup}>
           Close
         </button>
