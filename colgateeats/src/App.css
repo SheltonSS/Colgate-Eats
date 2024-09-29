@@ -20,7 +20,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #b71c1c; /* Changed the color to a darker shade */
+  background-color: rgb(130, 16, 25); /* Changed the color to a darker shade */
   padding: 20px;
   color: white;
   border-bottom: 3px solid #f44336; /* Added a subtle border to make it pop */
@@ -54,7 +54,7 @@ body {
 
 /* Header Section */
 .header {
-  background-color: #d50000;
+  background-color: #F03434;
   color: white;
   padding: 40px;
   text-align: center;
@@ -103,7 +103,7 @@ h2 {
   position: absolute;
   top: 0;
   right: 0;
-  background-color: #4caf50;
+  background-color: rgb(130, 16, 25);
   color: white;
   font-size: 1rem;
   border: 2px solid black; /* Added a border to make it stand out */
@@ -114,7 +114,7 @@ h2 {
 }
 
 .view-all-btn:hover {
-  background-color: #388e3c;
+  background-color: rgb(130, 16, 25);
   transform: scale(1.05); /* Add slight hover scaling to make it pop */
 }
 
@@ -168,7 +168,7 @@ h2 {
 .next-btn {
   margin-top: 20px;
   padding: 10px 20px;
-  background-color: #d50000;
+  background-color: rgb(130, 16, 25);
   color: white;
   border: none;
   border-radius: 5px;
