@@ -147,6 +147,13 @@ h2 {
 
 }
 
+.badges {
+  width: 25px;
+  height: 25px;
+  display: flex;
+ 
+}
+
 .card-title {
   font-size: 1rem;
   font-weight: bold;
