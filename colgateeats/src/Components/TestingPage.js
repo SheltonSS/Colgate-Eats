@@ -1,18 +1,30 @@
 import React, { useState } from 'react';
 import { Slider, Button, Typography, Box } from '@mui/material';
-import axios from 'axios';
-import { generateRecipe } from '../Helperfunctions/generateRecipe';
+import { predictRoute } from '../Helperfunctions/IngredientRoutePredictor';
 
 const TestingPage = () => {
-  // // State for each slider value
   const [light, setLight] = useState(3);
   const [sweet, setSweet] = useState(3);
   const [mild, setMild] = useState(3);
   const [west, setWest] = useState(3);
   const [veggie, setVeggie] = useState(3);
   const [time, setTime] = useState(3);
-  const [foodSuggestions, setFoodSuggestions] = useState([]);
+  const [predictedRoute, setPredictedRoute] = useState('');
+  const [loading, setLoading] = useState(false);
+  
+  const handlePredictRoute = async () => {
+    const ingredients = []; // Construct your ingredients based on the slider values
+    if (light > 5) ingredients.push('light'); // Example of how to gather ingredients
+    if (sweet > 5) ingredients.push('sweet');
+    if (mild > 5) ingredients.push('mild');
+    if (west > 5) ingredients.push('western');
+    if (veggie > 5) ingredients.push('vegetarian');
 
+    setLoading(true);
+    const route = await predictRoute(ingredients); // Call the prediction function
+    setPredictedRoute(route);
+    setLoading(false);
+  };
 
   return (
     <Box sx={{ width: 300, margin: 'auto', textAlign: 'center' }}>
@@ -32,25 +44,17 @@ const TestingPage = () => {
       <Slider value={time} onChange={(e, val) => setTime(val)} min={1} max={10} step={1} />
       <Typography>Time of Day: {time}</Typography>
 
-      {/* <Button variant="contained" color="primary" onClick={generateRecipe} sx={{ marginTop: 2 }}>
-        Generate Food Suggestions
-      </Button> */}
+      <Button variant="contained" color="primary" onClick={handlePredictRoute} sx={{ marginTop: 2 }} disabled={loading}>
+        {loading ? "Loading..." : "Generate Food Suggestions"}
+      </Button>
 
-      {foodSuggestions.length > 0 && (
+      {predictedRoute && (
         <Box sx={{ marginTop: 4 }}>
-          <Typography variant="h6">Food Suggestions:</Typography>
-          <ul>
-            {foodSuggestions.map((food, index) => (
-              <li key={index}>{food}</li>
-            ))}
-          </ul>
+          <Typography variant="h6">Predicted Route: {predictedRoute}</Typography>
         </Box>
       )}
     </Box>
   );
 };
-
-// export default App;
-
 
 export default TestingPage;
