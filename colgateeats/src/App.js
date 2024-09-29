@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import TestingPage from "./Components/TestingPage";
+import googlemaps from "./Components/googlemaps/googlemaps" 
 
 import "./App.css";
 
@@ -23,8 +24,8 @@ function App() {
         return <TestingPage />;
       // case "recipes":
       //   return <Recipes />;
-      // case "contact":
-      //   return <Contact />;
+      case "contact":
+        return <googlemaps />;
       default:
         return <Home openRecipePopup={openRecipePopup} />;
     }
