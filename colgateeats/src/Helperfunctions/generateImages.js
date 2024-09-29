@@ -3,7 +3,7 @@ const OpenAI = require('openai');
 
 // Create a new instance of OpenAI
 const openai = new OpenAI({
-  apiKey: "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", 
+  apiKey: "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", 
   dangerouslyAllowBrowser: true
   // Use your API key from environment variable
 });
