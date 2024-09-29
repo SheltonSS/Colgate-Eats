@@ -56,7 +56,7 @@ function RecipePopup({
                 <button className="close-popup-btn" onClick={closeRecipePopup}>
                     Close
                 </button>
-                <button className="next-btn" onClick={handleGenerateRecipes}>Find Directions</button>
+                <button className="next-btn">Find Directions</button>
             </div>
         </div>
     );
