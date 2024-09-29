@@ -1,42 +1,57 @@
+import recipes from '../Components/recipes';
+
 // Import the OpenAI library
 const OpenAI = require('openai');
 
 // Create a new instance of OpenAI
 const openai = new OpenAI({
-  apiKey: "sk-aM_qlfmyZYldTTW3fFkj50_i_kwxW8bbcwLKnWFSFyT3BlbkFJbWLkNcNowjugliYvnpV9pKKtPoRmSwPr-33zUV79oA",
+  apiKey: "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",
   dangerouslyAllowBrowser: true
 });
 
 async function generateRecipe(sweet_rank, spice_rank, veggie_rank, meal_time, time_range, cuisine, skill_level) {
-  const prompt = `Generate three unique recipes based on the following user preferences. Each recipe should include a name, ingredients, cooking instructions, cuisine type, and estimated cook time. The user has ranked their preferences on a scale of 1 to 10 as follows:
+  const prompt =
+    `
+    Generate three unique recipes based on the following user preferences. Each recipe should include a name, ingredients, cooking instructions, cuisine type, and estimated cook time. The user has ranked their preferences on a scale of 1 to 10 as follows:
 
-  Sweet: ${sweet_rank}
-  Mild: ${spice_rank}
-  Veggie: ${veggie_rank}
-  Meal time from breakfast, lunch, dinner: ${meal_time}
-  Time (array of minutes): ${time_range}
-  Cuisine from asian, african, european, latin: ${cuisine}
-  Skill Level from beginner, intermediate, or pro: ${skill_level}
-  Make sure to consider the rankings to balance the recipe flavors and complexity accordingly. Ensure that the recipes are suitable for the user's skill level and include a variety of ingredients that match their preferences.
-  Give a response in JSON with recipe_title(STRING), cook_time(INT), ingredients(ARRAY of STRINGS), cuisine(STRING), allergens(ARARY of STRING), dietary_restrictions for example vegan or halal(ARARY of STRING), instructions(STRING)
+    Sweet: ${sweet_rank}
+    Mild: ${spice_rank}
+    Veggie: ${veggie_rank}
+    Meal time: ${meal_time}
+    Time (array of minutes): ${time_range}
+    Cuisine: ${cuisine}
+    Skill Level: ${skill_level}
+
+    Give a response in JSON with recipe_title (STRING), cook_time (INT), ingredients (ARRAY of STRINGS), cuisine (STRING), allergens (ARRAY of STRING), dietary_restrictions (ARRAY of STRING), instructions (STRING).
   `;
 
   try {
     const response = await openai.chat.completions.create({
-      model: 'gpt-4o-mini',
+      model: 'gpt-4o',
       messages: [{ role: 'user', content: prompt }],
       max_tokens: 1000,
     });
 
-    console.log("Generated Recipe:\n", response.choices[0].message.content);
+    // console.log(response.choices[0].message.content)
+    // return (response.choices[0].message.content)
+    // recipes = response.choices[0].message.content
+    // const recipes = JSON.parse(response.choices[0].message.content); // Parse JSON response
+    // return recipes; // Return parsed recipes
+
+    // Clean the response
+    console.log(response.choices[0].message.content)
+    const cleanedContent = response.choices[0].message.content
+      .replace(/```json/g, '') // Remove the opening code block
+      .replace(/```/g, '') // Remove the closing code block
+      .trim(); // Remove any leading/trailing whitespace
+
+    const recipes = JSON.parse(cleanedContent);
+    return recipes; // Return parsed recipes
+
   } catch (error) {
-    if (error.response && error.response.status === 429) {
-      console.error("Rate limit exceeded. Please try again later.");
-    } else {
-      console.error("Error generating recipe:", error);
-    }
+    console.error("Error generating recipe:", error);
+    throw error; // Rethrow error for handling in the calling function
   }
 }
 
-// Example usage
-// generateRecipe(1, 8, 8, [30, 60], 'asian', 'beginner');
+export default generateRecipe
