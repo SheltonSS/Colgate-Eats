@@ -9,9 +9,13 @@ body {
   background-color: #f5f5f5;
 }
 
-.app {
-  max-width: 1200px;
-  margin: 0 auto;
+/* .app { */
+  /* max-width: m; */
+  /* margin: 0 auto; */
+  /* padding: 20px; */
+/* } */
+
+.restbod{
   padding: 20px;
 }
 

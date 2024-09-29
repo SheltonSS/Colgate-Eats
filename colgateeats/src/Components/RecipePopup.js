@@ -1,6 +1,12 @@
 import React from "react";
 
-function RecipePopup({ title, description, ingredients, instructions, closeRecipePopup }) {
+function RecipePopup({
+  title = "No Title",
+  description = "No description available.",
+  ingredients = [],
+  instructions = [],
+  closeRecipePopup,
+}) {
   return (
     <div className="recipe-popup">
       <div className="popup-content">
@@ -9,16 +15,20 @@ function RecipePopup({ title, description, ingredients, instructions, closeRecip
 
         <h3>Ingredients</h3>
         <ul>
-          {ingredients.map((ingredient, index) => (
-            <li key={index}>{ingredient}</li>
-          ))}
+          {ingredients.length > 0 ? (
+            ingredients.map((ingredient, index) => <li key={index}>{ingredient}</li>)
+          ) : (
+            <li>No ingredients provided.</li>
+          )}
         </ul>
 
         <h3>Instructions</h3>
         <ol>
-          {instructions.map((instruction, index) => (
-            <li key={index}>{instruction}</li>
-          ))}
+          {instructions.length > 0 ? (
+            instructions.map((instruction, index) => <li key={index}>{instruction}</li>)
+          ) : (
+            <li>No instructions provided.</li>
+          )}
         </ol>
 
         <button className="close-popup-btn" onClick={closeRecipePopup}>

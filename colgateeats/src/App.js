@@ -1,4 +1,3 @@
-// App.js
 import React, { useState } from "react";
 import Home from "./Components/home";
 import TestingPage from "./Components/TestingPage";
@@ -12,8 +11,10 @@ import "./App.css";
 function App() {
   const [currentPage, setCurrentPage] = useState("home");
   const [showRecipePopup, setShowRecipePopup] = useState(false);
+  const [selectedRecipe, setSelectedRecipe] = useState(null);
 
-  const openRecipePopup = () => {
+  const openRecipePopup = (recipe) => {
+    setSelectedRecipe(recipe); // Set the selected recipe data
     setShowRecipePopup(true);
   };
 
@@ -38,8 +39,17 @@ function App() {
       <Header setCurrentPage={setCurrentPage} />
 
       {renderPage()}
-
-      {showRecipePopup && <RecipePopup closeRecipePopup={closeRecipePopup} />}
+      <div className="restbod">
+        {showRecipePopup && selectedRecipe && (
+          <RecipePopup
+            title={selectedRecipe.title}
+            description={selectedRecipe.description}
+            ingredients={selectedRecipe.ingredients}
+            instructions={selectedRecipe.instructions}
+            closeRecipePopup={closeRecipePopup}
+          />
+        )}
+      </div>
     </div>
   );
 }
