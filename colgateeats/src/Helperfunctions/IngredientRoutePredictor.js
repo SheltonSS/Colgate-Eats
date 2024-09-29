@@ -3,7 +3,7 @@ const OpenAI = require('openai');
 
 // Initialize OpenAI API
 const openai = new OpenAI({
-  apiKey: "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",
+  apiKey: "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",
   dangerouslyAllowBrowser: true
 });
 
@@ -33,7 +33,7 @@ export const predictRoute = async (ingredients) => {
   const formattedStores = stores.map(store => {
     return `Store Name: ${store.name}, Address: ${store.address}, Type: ${store.type}, Route: ${store.route}`;
   }).join("\n");
-
+  console.log(ingredients)
   // Create the prompt with ingredients and the formatted store info
   const prompt = `
     Based on the following ingredients: ${ingredients.join(", ")},

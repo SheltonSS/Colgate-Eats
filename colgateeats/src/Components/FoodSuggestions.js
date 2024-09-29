@@ -2,10 +2,7 @@ import React from "react";
 import { Typography, Box, Card, CardContent, List, ListItem, Divider, Link } from "@mui/material";
 
 const FoodSuggestions = ({ route, recipe }) => {
-  console.log("suggesting:", route, recipe);
-
-  recipe = route[0];
-  route = route[1];
+  console.log("suggesting:", route);
 
   const link = "https://www.youtube.com/" //example
   if (!recipe) {
