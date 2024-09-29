@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 
-const FoodSuggestions = ({ route }) => {
+const FoodSuggestions = ({ route,recipes }) => {
   return (
     <Box sx={{ width: '80%', margin: 'auto', textAlign: 'center' }}>
       <Typography variant="h4" gutterBottom>

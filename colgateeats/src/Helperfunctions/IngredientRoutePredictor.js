@@ -3,7 +3,7 @@ const OpenAI = require('openai');
 
 // Initialize OpenAI API
 const openai = new OpenAI({
-  apiKey: "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", 
+  apiKey: "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",
   dangerouslyAllowBrowser: true
 });
 
@@ -29,7 +29,23 @@ const stores = [
 
 // Function to predict route based on ingredients
 export const predictRoute = async (ingredients) => {
-  const prompt = `Based on the ingredients:\n ${ingredients.join(", ")}, which route is most likely to have these ingredients available? The available routes are: \n${stores.join(", ")}`;
+  // Format the store information for the prompt
+  const formattedStores = stores.map(store => {
+    return `Store Name: ${store.name}, Address: ${store.address}, Type: ${store.type}, Route: ${store.route}`;
+  }).join("\n");
+
+  // Create the prompt with ingredients and the formatted store info
+  const prompt = `
+    Based on the following ingredients: ${ingredients.join(", ")},
+    which grocery store route is most likely to have these ingredients available?
+    The available routes and stores are:
+    
+    ${formattedStores}
+    
+    Please select the most likely route based on the ingredient types and stores. The response should just be the name of the store.
+  `;
+
+  console.log("Generated Prompt:", prompt);
 
   try {
     const response = await openai.chat.completions.create({
@@ -38,15 +54,8 @@ export const predictRoute = async (ingredients) => {
       max_tokens: 1000,
     });
 
-    
-  // try {
-    
-  //   const response = await openai.createChatCompletion({
-  //     model: 'gpt-3.5-turbo',
-  //     messages: [{ role: 'user', content: prompt }],
-  //   });
     console.log("Generated Route:\n", response.choices[0].message.content);
-    return response.data.choices[0].message.content.trim();
+    return response.choices[0].message.content.trim();
   } catch (error) {
     console.error("Error predicting route:", error);
     return "Error predicting route";

@@ -5,14 +5,14 @@ const OpenAI = require('openai');
 
 // Create a new instance of OpenAI
 const openai = new OpenAI({
-  apiKey: "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",
+  apiKey: "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",
   dangerouslyAllowBrowser: true
 });
 
 async function generateRecipe(sweet_rank, spice_rank, veggie_rank, meal_time, time_range, cuisine, skill_level) {
   const prompt =
     `
-    Generate three unique recipes based on the following user preferences. Each recipe should include a name, ingredients, cooking instructions, cuisine type, and estimated cook time. The user has ranked their preferences on a scale of 1 to 10 as follows:
+    Generate 1 unique recipe based on the following user preferences. Each recipe should include a name, ingredients, cooking instructions, cuisine type, and estimated cook time. The user has ranked their preferences on a scale of 1 to 10 as follows:
 
     Sweet: ${sweet_rank}
     Mild: ${spice_rank}
