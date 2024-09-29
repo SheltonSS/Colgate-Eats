@@ -1,12 +1,13 @@
 import React from "react";
-import { Typography, Box, Card, CardContent, List, ListItem, Divider } from "@mui/material";
+import { Typography, Box, Card, CardContent, List, ListItem, Divider, Link } from "@mui/material";
 
 const FoodSuggestions = ({ route, recipe }) => {
   console.log("suggesting:", route, recipe);
 
-  recipe = route[0]
-  route = route[1]
+  recipe = route[0];
+  route = route[1];
 
+  const link = "https://www.youtube.com/"
   if (!recipe) {
     return <Typography>No recipe found.</Typography>; // Handle case when recipe is undefined
   }
@@ -16,9 +17,15 @@ const FoodSuggestions = ({ route, recipe }) => {
       <Typography variant="h4" gutterBottom align="center">
         Food Suggestions
       </Typography>
-      <Typography variant="h6">Predicted Route: <strong>{route}</strong></Typography>
-      {/* <Typography variant="subtitle1" gutterBottom>User Preference: <strong>{userPreference}</strong></Typography> */}
-      
+
+      {/* Clickable Route Link */}
+      <Typography variant="h6">
+        Predicted Route:{" "}
+        <Link href={link} target="_blank" rel="noopener noreferrer" underline="hover">
+          {route}
+        </Link>
+      </Typography>
+
       <Card variant="outlined" sx={{ marginTop: 2 }}>
         <CardContent>
           <Typography variant="h5" gutterBottom>
