@@ -1,4 +1,26 @@
 import React from "react";
+// import {handleGenerateRecipes} from TestingPage
+// import TestingPage from "./TestingPage";
+
+// const handleGenerateRecipes = async () => {
+//     setLoading(true);
+//     const timeRange = [30, 60]; // Set your desired time range
+//     try {
+//       const generatedRecipes = await generateRecipe(sweet, mild, veggie, mealTime, timeRange, cuisine, skillLevel);
+
+//       // Predict route based on the first recipe's ingredients
+//       const route = await predictRoute(generatedRecipes.ingredients);
+
+//       // Navigate to FoodSuggestions with the predicted route and recipes
+//       console.log('Generated Recipes:', generatedRecipes); // Check the output
+//       navigateToFoodSuggestions([generatedRecipes, route],route);
+
+//     } catch (error) {
+//       console.error("Error generating recipes:", error);
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
 
 function RecipePopup({
     title = "No Title",
@@ -34,7 +56,7 @@ function RecipePopup({
                 <button className="close-popup-btn" onClick={closeRecipePopup}>
                     Close
                 </button>
-                <button className="next-btn">Find Directions</button>
+                <button className="next-btn" onClick={handleGenerateRecipes}>Find Directions</button>
             </div>
         </div>
     );
