@@ -1,0 +1,25 @@
+.food-suggestions-page {
+    padding: 20px;
+  }
+  
+  .suggestions {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /* Ensure that items wrap if there's not enough space */
+  }
+  
+  .suggestion-card {
+    width: 30%;
+    background-color: #e0e0e0;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .suggestion-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
