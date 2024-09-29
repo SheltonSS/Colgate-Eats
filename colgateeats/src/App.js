@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Home from "./Components/home";
 import TestingPage from "./Components/TestingPage";
-import googlemaps from "./Components/googlemaps/googlemaps";
+import GoogleMaps from "./Components/googlemaps/googlemaps";
 import Navbar from "./Components/navbar";
 import Header from "./Components/header";
 import RecipePopup from "./Components/RecipePopup";
@@ -26,7 +26,7 @@ function App() {
       case "preferences":
         return <TestingPage />;
       case "contact":
-        return <googlemaps />;
+        return <GoogleMaps />;
       default:
         return <Home openRecipePopup={openRecipePopup} />;
     }
