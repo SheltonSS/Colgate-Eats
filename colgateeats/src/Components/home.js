@@ -12,11 +12,11 @@ function Home({ openRecipePopup }) {
             <div className="card-badges">Badge Area</div>
           </div>
           <div className="favorite-card" onClick={openRecipePopup}>
-            <div className="card-title">Recipe Title</div>
+            <div className="card-title">Fuzhou Triangle Cake</div>
             <div className="card-badges">Badge Area</div>
           </div>
           <div className="favorite-card" onClick={openRecipePopup}>
-            <div className="card-title">Recipe Title</div>
+            <div className="card-title">Kare-Kare</div>
             <div className="card-badges">Badge Area</div>
           </div>
         </div>
@@ -27,15 +27,42 @@ function Home({ openRecipePopup }) {
         <button className="view-all-btn">View all</button>
         <div className="halal-options">
           <div className="halal-card" onClick={openRecipePopup}>
-            <div className="card-title">Recipe Title</div>
+            <div className="card-title">Shawarma</div>
             <div className="card-badges">Badge Area</div>
           </div>
           <div className="halal-card" onClick={openRecipePopup}>
-            <div className="card-title">Recipe Title</div>
+            <div className="card-title">Falafel</div>
             <div className="card-badges">Badge Area</div>
           </div>
           <div className="halal-card" onClick={openRecipePopup}>
-            <div className="card-title">Recipe Title</div>
+            <div className="card-title">Moroccan Couscous</div>
+            <div className="card-badges">Badge Area</div>
+          </div>
+        </div>
+      </section>
+
+      <section className="halal-section">
+        <h2>Others</h2>
+        <button className="view-all-btn">View all</button>
+        <div className="halal-options">
+          <div className="halal-card" onClick={openRecipePopup}>
+            <div className="card-title">Fried Chicken</div>
+            <div className="card-badges">Badge Area</div>
+          </div>
+          <div className="halal-card" onClick={openRecipePopup}>
+            <div className="card-title">Paneer Bhurji</div>
+            <div className="card-badges">Badge Area</div>
+          </div>
+          <div className="halal-card" onClick={openRecipePopup}>
+            <div className="card-title">Ponzu Tofu Poke Bowl</div>
+            <div className="card-badges">Badge Area</div>
+          </div>
+          <div className="halal-card" onClick={openRecipePopup}>
+            <div className="card-title">Haitian Tasso</div>
+            <div className="card-badges">Badge Area</div>
+          </div>
+          <div className="halal-card" onClick={openRecipePopup}>
+            <div className="card-title">Beef Bourguignon</div>
             <div className="card-badges">Badge Area</div>
           </div>
         </div>
