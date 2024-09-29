@@ -7,7 +7,7 @@ const FoodSuggestions = ({ route, recipe }) => {
   recipe = route[0];
   route = route[1];
 
-  const link = "https://www.youtube.com/"
+  const link = "https://www.youtube.com/" //example
   if (!recipe) {
     return <Typography>No recipe found.</Typography>; // Handle case when recipe is undefined
   }
