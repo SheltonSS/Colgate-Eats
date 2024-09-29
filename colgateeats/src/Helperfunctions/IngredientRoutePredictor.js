@@ -42,7 +42,7 @@ export const predictRoute = async (ingredients) => {
     
     ${formattedStores}
     
-    Please select the most likely route based on the ingredient types and stores. The response should just be the name of the store.
+    Please select the most likely route based on the ingredient types and stores. The response should just be the name of the route.
   `;
 
   console.log("Generated Prompt:", prompt);

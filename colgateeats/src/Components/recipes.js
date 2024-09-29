@@ -1,5 +1,3 @@
-// src/data/recipes.js
-
 const recipes = {
     "Fuzhou Triangle Cake": {
       title: "Fuzhou Triangle Cake",

@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
-import { Slider, Button, Typography, Box } from '@mui/material';
-import generateRecipe from '../Helperfunctions/generateRecipe'; // Adjust the path as necessary
-import FoodSuggestions from './FoodSuggestions';
-import { predictRoute } from '../Helperfunctions/IngredientRoutePredictor';
+import React, { useState } from "react";
+import { Slider, Button, Typography, Box } from "@mui/material";
+import generateRecipe from "../Helperfunctions/generateRecipe"; // Adjust the path as necessary
+import { predictRoute } from "../Helperfunctions/IngredientRoutePredictor";
 
-const TestingPage = () => {
+const TestingPage = ({ navigateToFoodSuggestions }) => { // Accept function as a prop
   const [light, setLight] = useState(3);
   const [sweet, setSweet] = useState(3);
   const [mild, setMild] = useState(3);
@@ -20,23 +19,16 @@ const TestingPage = () => {
   // Handle generating recipes
   const handleGenerateRecipes = async () => {
     setLoading(true);
-    
     const timeRange = [30, 60]; // Set your desired time range
     try {
-      const generatedRecipesString = await generateRecipe(sweet, mild, veggie, mealTime, timeRange, cuisine, skillLevel);
-      
-      // Clean the response to remove backticks and extra formatting
-      // const cleanedResponse = generatedRecipesString.replace(/```json/g, '').replace(/```/g, '').trim();
-      
-      // Parse the cleaned JSON string into an object
-      const generatedRecipes = (generatedRecipesString);
+      const generatedRecipes = await generateRecipe(sweet, mild, veggie, mealTime, timeRange, cuisine, skillLevel);
 
-      // Set the recipes state
-      setRecipes(generatedRecipes);
-      
       // Predict route based on the first recipe's ingredients
       const route = await predictRoute(generatedRecipes.ingredients);
-      setPredictedRoute(route);
+
+      // Navigate to FoodSuggestions with the predicted route and recipes
+      console.log('Generated Recipes:', generatedRecipes); // Check the output
+      navigateToFoodSuggestions([generatedRecipes, route],route);
 
     } catch (error) {
       console.error("Error generating recipes:", error);
@@ -45,29 +37,7 @@ const TestingPage = () => {
     }
   };
 
-  if (recipes.length > 0) {
-    return (
-      <div>
-        <FoodSuggestions route={predictedRoute} />
-        <Typography variant="h6">Generated Recipes:</Typography>
-        {recipes.map((recipe, index) => (
-          <Box key={index} sx={{ marginTop: 2, padding: 2, border: '1px solid black' }}>
-            <Typography variant="h6">{recipe.recipe_title}</Typography>
-            <Typography>Cook Time: {recipe.cook_time} minutes</Typography>
-            <Typography>Ingredients:</Typography>
-            <ul>
-              {recipe.ingredients.map((ingredient, i) => (
-                <li key={i}>{ingredient}</li>
-              ))}
-            </ul>
-            <Typography>Instructions:</Typography>
-            <Typography>{recipe.instructions}</Typography>
-          </Box>
-        ))}
-      </div>
-    );
-  }
-
+  // Render sliders and button if no suggestions yet
   return (
     <Box sx={{ width: 300, margin: 'auto', textAlign: 'center' }}>
       <Typography variant="h5" gutterBottom>

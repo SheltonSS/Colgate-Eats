@@ -1,26 +1,46 @@
-import React from 'react';
-import { Box, Typography } from '@mui/material';
+import React from "react";
+import { Typography, Box, Card, CardContent, List, ListItem, Divider } from "@mui/material";
 
-const FoodSuggestions = ({ route,recipes }) => {
+const FoodSuggestions = ({ route, recipe }) => {
+  console.log("suggesting:", route, recipe);
+
+  recipe = route[0]
+  route = route[1]
+
+  if (!recipe) {
+    return <Typography>No recipe found.</Typography>; // Handle case when recipe is undefined
+  }
+
   return (
-    <Box sx={{ width: '80%', margin: 'auto', textAlign: 'center' }}>
-      <Typography variant="h4" gutterBottom>
-        Food Suggestions Based on Your Preferences
+    <Box sx={{ padding: 2, maxWidth: 600, margin: "auto" }}>
+      <Typography variant="h4" gutterBottom align="center">
+        Food Suggestions
       </Typography>
-      <Typography variant="body1">
-        Based on the predicted route: <strong>{route}</strong>, here are some food suggestions:
-      </Typography>
-
-      {/* This is where you'd list the suggestions; for now, we'll mock some data */}
-      <Box sx={{ marginTop: 4 }}>
-        <Typography variant="h6">Suggested Dishes:</Typography>
-        <ul>
-          <li>Light & Sweet Salad</li>
-          <li>Mild Vegetarian Stir-fry</li>
-          <li>Western-style Light Pasta</li>
-          {/* More suggestions based on route */}
-        </ul>
-      </Box>
+      <Typography variant="h6">Predicted Route: <strong>{route}</strong></Typography>
+      {/* <Typography variant="subtitle1" gutterBottom>User Preference: <strong>{userPreference}</strong></Typography> */}
+      
+      <Card variant="outlined" sx={{ marginTop: 2 }}>
+        <CardContent>
+          <Typography variant="h5" gutterBottom>
+            {recipe.recipe_title}
+          </Typography>
+          <Typography variant="body1" color="text.secondary">
+            Cook Time: {recipe.cook_time} minutes
+          </Typography>
+          <Divider sx={{ margin: "10px 0" }} />
+          <Typography variant="h6">Ingredients:</Typography>
+          <List>
+            {recipe.ingredients.map((ingredient, i) => (
+              <ListItem key={i}>
+                <Typography variant="body2">{ingredient}</Typography>
+              </ListItem>
+            ))}
+          </List>
+          <Divider sx={{ margin: "10px 0" }} />
+          <Typography variant="h6">Instructions:</Typography>
+          <Typography variant="body2">{recipe.instructions}</Typography>
+        </CardContent>
+      </Card>
     </Box>
   );
 };
