@@ -3,7 +3,7 @@ const OpenAI = require('openai');
 
 // Create a new instance of OpenAI
 const openai = new OpenAI({
-  apiKey: "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", 
+  apiKey: "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", 
   dangerouslyAllowBrowser: true
   // Use your API key from environment variable
 });
@@ -18,10 +18,10 @@ async function generateRecipe(recipe_name) {
       n: 1,
       size: "1024x1024",
     });
-    
-    image_url = response.data[0].url;
 
+    const image_url = response.data[0].url;
     console.log("Generated Recipe Image URL:\n", image_url);
+    return image_url; // Return the image URL
 
   } catch (error) {
     if (error.response && error.response.status === 429) {
@@ -29,8 +29,11 @@ async function generateRecipe(recipe_name) {
     } else {
       console.error("Error generating image:", error);
     }
+    return null;
   }
 }
+
+// Example usage: const imageURL = await generateRecipe("shrimp fried rice");
 
 // Example usage
 // generateRecipe("shrimp fried rice");
