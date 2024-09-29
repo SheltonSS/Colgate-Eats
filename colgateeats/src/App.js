@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import TestingPage from './TestingPage';
+
 import "./App.css";
 
 function App() {
@@ -17,8 +19,8 @@ function App() {
     switch (currentPage) {
       // case "home":
       //   return <Home openRecipePopup={openRecipePopup} />;
-      // case "preferences":
-      //   return <Preferences />;
+      case "preferences":
+        return <TestingPage />;
       // case "recipes":
       //   return <Recipes />;
       // case "contact":

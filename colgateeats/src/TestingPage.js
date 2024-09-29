@@ -32,9 +32,9 @@ const TestingPage = () => {
       <Slider value={time} onChange={(e, val) => setTime(val)} min={1} max={5} step={1} />
       <Typography>Time of Day: {time}</Typography>
 
-      <Button variant="contained" color="primary" onClick={generateRecipe} sx={{ marginTop: 2 }}>
+      {/* <Button variant="contained" color="primary" onClick={generateRecipe} sx={{ marginTop: 2 }}>
         Generate Food Suggestions
-      </Button>
+      </Button> */}
 
       {foodSuggestions.length > 0 && (
         <Box sx={{ marginTop: 4 }}>

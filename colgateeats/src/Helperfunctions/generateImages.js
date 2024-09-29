@@ -3,7 +3,9 @@ const OpenAI = require('openai');
 
 // Create a new instance of OpenAI
 const openai = new OpenAI({
-  apiKey: "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", // Use your API key from environment variable
+  apiKey: "sk-aM_qlfmyZYldTTW3fFkj50_i_kwxW8bbcwLKnWFSFyT3BlbkFJbWLkNcNowjugliYvnpV9pKKtPoRmSwPr-33zUV79oA", 
+  dangerouslyAllowBrowser: true
+  // Use your API key from environment variable
 });
 
 async function generateRecipe(recipe_name) {
