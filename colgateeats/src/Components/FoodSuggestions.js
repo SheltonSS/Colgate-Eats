@@ -4,7 +4,7 @@ import { Typography, Box, Card, CardContent, List, ListItem, Divider, Link } fro
 const FoodSuggestions = ({ route, recipe }) => {
   console.log("suggesting:", route);
 
-  const link = "https://www.youtube.com/" //example
+  const link = "https://docs.google.com/forms/d/e/1FAIpQLScKDfNRn1s2uf9hjdQPRJz57ugZgonCVUKQqhnWFoLf-KbS5w/viewform?embedded=true"
   if (!recipe) {
     return <Typography>No recipe found.</Typography>; // Handle case when recipe is undefined
   }
