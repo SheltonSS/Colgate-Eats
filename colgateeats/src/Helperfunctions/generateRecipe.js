@@ -39,4 +39,4 @@ async function generateRecipe(sweet_rank, spice_rank, veggie_rank, meal_time, ti
 }
 
 // Example usage
-generateRecipe(1, 8, 8, [30, 60], 'asian', 'beginner');
+// generateRecipe(1, 8, 8, [30, 60], 'asian', 'beginner');

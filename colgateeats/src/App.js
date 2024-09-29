@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import TestingPage from './TestingPage';
+import TestingPage from "./Components/TestingPage";
 
 import "./App.css";
 

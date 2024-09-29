@@ -33,4 +33,4 @@ async function generateRecipe(recipe_name) {
 }
 
 // Example usage
-generateRecipe("shrimp fried rice");
+// generateRecipe("shrimp fried rice");
