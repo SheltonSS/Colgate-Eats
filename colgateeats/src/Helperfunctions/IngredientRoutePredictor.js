@@ -3,7 +3,7 @@ const OpenAI = require('openai');
 
 // Initialize OpenAI API
 const openai = new OpenAI({
-  apiKey: "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",
+  apiKey: "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",
   dangerouslyAllowBrowser: true
 });
 
