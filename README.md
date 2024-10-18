@@ -1,70 +1,22 @@
-# Getting Started with Create React App
+# Colgate Eats
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+We hunt ingredients so you don’t have to—your meal's a click away! At Colgate Eats we offer a variety of food assortments, included with the recipes and ingredients you could need. What's better is that if you're craving something and just can't quite put your finger on it, use our preference bar and an AI will generate a meal for you based off of your preferences. 
 
-## Available Scripts
+## What Can We Do!
 
-In the project directory, you can run:
+So far with the website we've built we've offered recipes made by students as well as including some generated ones based off of Colgate student's preferences. It includes badges to inform the user whether the food meets certain dietary restrictions or what not. 
 
-### `npm start`
+Once we've generated a recipe for you we open up a google form that allows the students to sign up for a cruiser, in collaboration with our Student Government Association, that sends you on a route to multiple stores where the ingredients can be located. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Not only does the food contain recipes and instructions for mainly how to create the food, but it also creates a personalized meal for you using preference sliders that can be customized into anything. Taking into account the time of day, sweetness, heaviness, and even more. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Future Ideas
 
-### `npm test`
+We would love to implement an account system to save the user's preferences and allow it to make a more personalized experience within the website.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Our vision also includes being able to save certain recipes onto our main home page, and just like any other website, push the most popular recipes that people come up with to the front page!
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
