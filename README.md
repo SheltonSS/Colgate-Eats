@@ -10,6 +10,11 @@ Once we've generated a recipe for you we open up a google form that allows the s
 
 Not only does the food contain recipes and instructions for mainly how to create the food, but it also creates a personalized meal for you using preference sliders that can be customized into anything. Taking into account the time of day, sweetness, heaviness, and even more. 
 
+<img width="1118" alt="Screenshot 2024-10-20 at 1 43 48 PM" src="https://github.com/user-attachments/assets/1a8e816b-3d02-40d5-9dac-cd4dbf37584e">
+
+<img width="1117" alt="Screenshot 2024-10-20 at 1 44 02 PM" src="https://github.com/user-attachments/assets/0137d51e-1bca-4e81-92df-11a633090ae2">
+
+
 ## Future Ideas
 
 We would love to implement an account system to save the user's preferences and allow it to make a more personalized experience within the website.
